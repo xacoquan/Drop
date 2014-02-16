@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fast, fclean, re
 
 NAME = libft.a
 CC = gcc
@@ -27,8 +27,18 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+ifeq ($(FAST),1)
+
+%.o : %_fast.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+endif
+
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
+fast:
+	@make -C . "CFLAGS=-O2 $(CFLAGS)" FAST=1
 
 clean :
 	rm -rf $(OBJ)
