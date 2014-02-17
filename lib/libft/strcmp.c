@@ -6,13 +6,13 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 18:29:39 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/21 18:32:43 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 22:30:31 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_strcmp(const char *s1, const char *s2)
+int		ft_strcmp(const char *s1, const char *s2)
 {
 	return (ft_strncmp(s1, s2, ft_strlen(s1) + 1));
 }

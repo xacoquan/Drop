@@ -6,11 +6,11 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 18:48:24 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/21 18:51:34 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 22:30:13 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 char		*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
@@ -37,6 +37,7 @@ char		*ft_strnstr(const char *s1, const char *s2, size_t n)
 		s1++;
 		n--;
 	}
-	return (NULL);
+	str = s2[i] ? NULL : str;
+	return (str);
 }
 

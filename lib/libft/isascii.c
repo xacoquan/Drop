@@ -6,11 +6,9 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 19:27:13 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/21 19:28:45 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 22:38:58 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_isascii(int c)
 {

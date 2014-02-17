@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   strsub.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 16:29:01 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/29 16:47:14 by mbacoux          ###   ########.fr       */
+/*   Created: 2013/11/25 18:57:20 by mbacoux           #+#    #+#             */
+/*   Updated: 2013/12/01 22:47:55 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	ft_memset(s, 0, n);
+	char	*str;
+
+	str = ft_strnew(len);
+	if (str)
+	{
+		ft_memcpy((void *)str, (void *)(s + start), len);
+	}
+	return (str);
 }
 

@@ -6,15 +6,15 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 16:29:45 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/20 17:35:29 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 23:03:46 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 void		*ft_memccpy(void *dst, const void *src, int c, size_t len)
 {
-	while (len--)
+	while (len)
 	{
 		*((char*)dst) = *((char*)src);
 		dst = (void*)((char*)dst + 1);
@@ -23,6 +23,8 @@ void		*ft_memccpy(void *dst, const void *src, int c, size_t len)
 		{
 			return (dst);
 		}
+		len--;
 	}
 	return (NULL);
 }
+

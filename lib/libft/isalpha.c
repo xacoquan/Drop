@@ -6,11 +6,9 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 19:05:07 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/21 19:08:04 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 22:38:12 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int			ft_isalpha(int c)
 {

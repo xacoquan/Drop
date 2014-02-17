@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   memalloc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 16:29:01 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/29 16:47:14 by mbacoux          ###   ########.fr       */
+/*   Created: 2013/11/25 17:48:54 by mbacoux           #+#    #+#             */
+/*   Updated: 2013/12/01 22:42:33 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void		*ft_memalloc(size_t size)
 {
-	ft_memset(s, 0, n);
+	void	*ptr;
+
+	ptr = NULL;
+	if (size)
+	{
+		ptr = malloc(size);
+		if (ptr)
+		{
+			ft_bzero(ptr, size);
+		}
+	}
+	return (ptr);
 }
 

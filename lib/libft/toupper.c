@@ -6,11 +6,9 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 19:33:10 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/21 19:34:38 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 22:39:27 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_toupper(int c)
 {

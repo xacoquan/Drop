@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   putendl_fd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 16:29:01 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/29 16:47:14 by mbacoux          ###   ########.fr       */
+/*   Created: 2013/11/26 19:16:42 by mbacoux           #+#    #+#             */
+/*   Updated: 2013/12/01 22:59:21 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	ft_memset(s, 0, n);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
 

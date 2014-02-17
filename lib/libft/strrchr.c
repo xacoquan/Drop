@@ -6,7 +6,7 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 01:10:44 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/21 01:24:09 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 22:27:36 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ char		*ft_strrchr(const char *s, int c)
 	{
 		if (s[i] == (char)c)
 		{
-			return ((char*)&(s[i]));
+			return ((char *)&(s[i]));
 		}
 		i--;
 	}
-	if ((char)c == '\0')
+	if ((char)c == s[i])
 	{
-		return ((char*)s);
+		return ((char *)s);
 	}
 	return (NULL);
 }

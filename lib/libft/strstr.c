@@ -6,13 +6,13 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 18:45:10 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/21 18:46:52 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 22:29:21 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strstr(const char *s1, const char *s2)
+char	*ft_strstr(const char *s1, const char *s2)
 {
 	return (ft_strnstr(s1, s2, ft_strlen(s1)));
 }

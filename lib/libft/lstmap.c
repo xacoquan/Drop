@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   lstmap.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mbacoux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 16:30:11 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/12/01 22:22:24 by mbacoux          ###   ########.fr       */
+/*   Created: 2013/12/01 14:34:08 by mbacoux           #+#    #+#             */
+/*   Updated: 2013/12/01 23:02:33 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void		*ft_memmove(void *dst, const void *src, size_t len)
+t_list		*ft_lstmap(t_list *lst, t_list * (*f)(t_list *))
 {
-	void	*buf;
+	t_list	*new;
+	t_list	*tmp;
 
-	buf = NULL;
-	if (len)
+	if (!lst)
+		return (NULL);
+	new = f(lst);
+	tmp = new;
+	lst = lst->next;
+	while (lst)
 	{
-		buf = malloc(len);
+		tmp->next = f(lst);
+		tmp = tmp->next;
+		lst = lst->next;
 	}
-	if (buf)
-	{
-		ft_memcpy(buf, src, len);
-		ft_memcpy(dst, buf, len);
-		free(buf);
-	}
-	return (dst);
+	tmp->next = NULL;
+	return (new);
 }
+

@@ -6,11 +6,9 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 19:28:57 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/21 19:32:21 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 22:39:11 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_isprint(int c)
 {

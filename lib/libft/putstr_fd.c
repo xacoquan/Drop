@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   putstr_fd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 16:29:01 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/29 16:47:14 by mbacoux          ###   ########.fr       */
+/*   Created: 2013/11/26 19:15:14 by mbacoux           #+#    #+#             */
+/*   Updated: 2013/12/01 22:58:58 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	ft_memset(s, 0, n);
+	write(fd, s, ft_strlen(s));
 }
-

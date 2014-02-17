@@ -6,11 +6,11 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 16:30:21 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/20 16:30:45 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 23:03:02 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 void				*ft_memset(void *b, int c, size_t len)
 {

@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   striteri.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 16:29:01 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/29 16:47:14 by mbacoux          ###   ########.fr       */
+/*   Created: 2013/11/25 18:33:59 by mbacoux           #+#    #+#             */
+/*   Updated: 2013/12/01 22:44:37 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
+void				ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	ft_memset(s, 0, n);
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		f(i, &(s[i]));
+		i++;
+	}
 }
 

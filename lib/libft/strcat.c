@@ -6,7 +6,7 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 20:52:37 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/20 21:37:03 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 22:25:00 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,6 @@
 
 char		*ft_strcat(char *s1, const char *s2)
 {
-	char	*str;
-
-	str = s1;
-	while (*str)
-	{
-		str++;
-	}
-	while (*s2)
-	{
-		*str = *s2;
-		str++;
-		s2++;
-	}
-	*str = '\0';
-	return (s1);
+	return (ft_strncat(s1, s2, ft_strlen(s2)));
 }
 

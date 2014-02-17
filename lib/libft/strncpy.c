@@ -6,18 +6,18 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 18:12:10 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/20 20:43:35 by mbacoux          ###   ########.fr       */
+/*   Updated: 2013/12/01 23:04:59 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 char		*ft_strncpy(char *s1, const char *s2, size_t n)
 {
 	char	*dst;
 
 	dst = s1;
-	while (n--)
+	while (n)
 	{
 		*dst = *s2;
 		dst++;
@@ -25,6 +25,8 @@ char		*ft_strncpy(char *s1, const char *s2, size_t n)
 		{
 			s2++;
 		}
+		n--;
 	}
 	return (s1);
 }
+

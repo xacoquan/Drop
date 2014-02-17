@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   lstiter.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mbacoux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 16:29:01 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/11/29 16:47:14 by mbacoux          ###   ########.fr       */
+/*   Created: 2013/12/01 14:19:26 by mbacoux           #+#    #+#             */
+/*   Updated: 2013/12/01 23:02:06 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *))
 {
-	ft_memset(s, 0, n);
+	if (lst)
+	{
+		f(lst);
+		ft_lstiter(lst->next, f);
+	}
 }
 
