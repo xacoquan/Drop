@@ -13,7 +13,6 @@
 .PHONY: all, clean, fast, fclean, re
 
 NAME = libft.a
-CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic -I./
 SOURCE = memset.c bzero.c memcpy.c memccpy.c memmove.c memchr.c memcmp.c \
 		 strlen.c strdup.c strcpy.c strncpy.c strcat.c strncat.c strlcat.c \
