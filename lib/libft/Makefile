@@ -24,7 +24,8 @@ SOURCE = memset.c bzero.c memcpy.c memccpy.c memmove.c memchr.c memcmp.c \
 		 strsub.c strjoin.c strtrim.c strsplit.c itoa.c putchar.c putstr.c \
 		 putendl.c putnbr.c putchar_fd.c putstr_fd.c putendl_fd.c \
 		 putnbr_fd.c lstnew.c lstdelone.c lstdel.c lstadd.c lstiter.c \
-		 lstmap.c
+		 lstmap.c realloc.c
+
 OBJ = $(SOURCE:.c=.o)
 
 
@@ -50,7 +51,7 @@ $(NAME) : $(OBJ)
 
 ifeq ($(FAST), 1)
 
-%.o : %_fast.c
+%.o : %_fast.c libft.h
 	@echo "\033[35;1m• \033[0mCreating object file $@ ...\033[55G\c"
 	@export result=`$(CC) $(CFLAGS) -c $< -o $@ 2>&1` ; \
 	if [ "$$result" = "" ] ; then \
@@ -63,7 +64,7 @@ ifeq ($(FAST), 1)
 endif
 
 
-%.o : %.c
+%.o : %.c libft.h
 	@echo "\033[35;1m• \033[0mCreating object file $@ ...\033[55G\c"
 	@export result=`$(CC) $(CFLAGS) -c $< -o $@ 2>&1` ; \
 	if [ "$$result" = "" ] ; then \
