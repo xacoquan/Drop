@@ -6,7 +6,7 @@
 #    By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 16:28:30 by mbacoux           #+#    #+#              #
-#    Updated: 2014/02/17 18:59:43 by mbacoux          ###   ########.fr        #
+#    Updated: 2014/02/22 19:17:43 by mbacoux          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SOURCE = memset.c bzero.c memcpy.c memccpy.c memmove.c memchr.c memcmp.c \
 		 strsub.c strjoin.c strtrim.c strsplit.c itoa.c putchar.c putstr.c \
 		 putendl.c putnbr.c putchar_fd.c putstr_fd.c putendl_fd.c \
 		 putnbr_fd.c lstnew.c lstdelone.c lstdel.c lstadd.c lstiter.c \
-		 lstmap.c realloc.c
+		 lstmap.c realloc.c get_line.c
 
 OBJ = $(SOURCE:.c=.o)
 
