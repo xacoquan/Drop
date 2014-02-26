@@ -6,7 +6,7 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 17:19:42 by mbacoux           #+#    #+#             */
-/*   Updated: 2013/12/01 23:04:43 by mbacoux          ###   ########.fr       */
+/*   Updated: 2014/02/27 00:40:47 by ffourati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ size_t		ft_strlen(const char *s)
 
 	i = 0;
 	while (s[i])
-	{
 		i++;
-	}
 	return (i);
 }
 
