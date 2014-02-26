@@ -6,7 +6,7 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 16:28:46 by mbacoux           #+#    #+#             */
-/*   Updated: 2014/02/22 18:30:06 by mbacoux          ###   ########.fr       */
+/*   Updated: 2014/02/27 00:32:22 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,23 @@ t_list				*ft_lstmap(t_list *, t_list * (*f)(t_list *));
 
 void				*ft_realloc(void *, size_t);
 int					ft_get_line(int, char **);
+
+/*
+** List Templates
+*/
+
+typedef struct				s_tlist_node
+{
+	struct s_tlist_node		*next;
+}							t_tlist_node;
+
+typedef void (*t_tlist_func)(t_tlist_node*);
+
+typedef struct				s_tlist
+{
+	t_tlist_node			*elements;
+	t_tlist_func			dtor;
+}							t_tlist;
 
 #endif /* !LIBFT_H */
 
