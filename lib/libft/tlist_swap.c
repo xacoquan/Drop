@@ -6,7 +6,7 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 02:04:43 by mbacoux           #+#    #+#             */
-/*   Updated: 2014/02/27 18:44:18 by mbacoux          ###   ########.fr       */
+/*   Updated: 2014/02/27 18:53:44 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ static void			ft_tlist_swap_cont(t_tlist *lst,
 		ft_tlist_swap_cont(lst, n2, n1);
 		return ;
 	}
+	if (n1->prev)
+		n1->prev->next = n2;
+	if (n2->next)
+		n2->next->prev = n1;
 	tmp = n2->next;
 	n2->next = n1;
 	n1->next = tmp;
