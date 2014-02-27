@@ -6,7 +6,7 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 16:28:46 by mbacoux           #+#    #+#             */
-/*   Updated: 2014/02/27 00:32:22 by mbacoux          ###   ########.fr       */
+/*   Updated: 2014/02/27 01:27:02 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,13 +122,30 @@ typedef struct				s_tlist_node
 	struct s_tlist_node		*next;
 }							t_tlist_node;
 
-typedef void (*t_tlist_func)(t_tlist_node*);
+typedef void (*t_tlist_func)(t_tlist_node *);
+typedef void (*t_tlist_dtor)(t_tlist_node *);
+typedef int (*t_tlist_pred)(t_tlist_node *);
+typedef int (*t_tlist_cmp)(t_tlist_node *, t_tlist_node *);
 
 typedef struct				s_tlist
 {
 	t_tlist_node			*elements;
 	t_tlist_func			dtor;
 }							t_tlist;
+
+t_tlist				*ft_tlist_new(t_list_dtor);
+int					ft_tlist_push_front(t_tlist *, t_tlist_node *);
+int					ft_tlist_push_back(t_tlist *, t_tlist_node *);
+void				ft_tlist_each(t_tlist *, t_tlist_func);
+void				ft_tlist_each_if(t_tlist *, t_tlist_pred, t_tlist_func);
+t_tlist_node		*ft_tlist_search(t_tlist *, t_tlist_pred);
+void				ft_tlist_sort(t_tlist *, t_tlist_cmp);
+size_t				ft_tlist_size(t_tlist *);
+int					ft_tlist_is_empty(t_tlist *);
+void				ft_tlist_delnode(t_tlist *, t_tlist_node *, t_tlist_dtor);
+int					ft_tlist_remove_if(t_tlist *, t_tlist_pred, t_tlist_dtor);
+void				ft_tlist_clear(t_tlist *, t_tlist_dtor);
+void				ft_tlist_delete(t_tlist *);
 
 #endif /* !LIBFT_H */
 
