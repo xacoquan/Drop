@@ -6,7 +6,7 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 02:23:12 by mbacoux           #+#    #+#             */
-/*   Updated: 2014/02/27 19:07:32 by mbacoux          ###   ########.fr       */
+/*   Updated: 2014/02/27 19:09:25 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void				ft_tlist_rsort(t_tlist *lst, t_tlist_cmp cmp)
 
 	if (lst->elements == NULL || lst->elements->next == NULL)
 		return ;
-	i = lst->elements;
 	c = 1;
 	while (c)
 	{
+		i = lst->elements;
 		c = 0;
 		while (i->next)
 		{
