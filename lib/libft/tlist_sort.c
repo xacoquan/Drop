@@ -16,20 +16,24 @@ void				ft_tlist_sort(t_tlist *lst, t_tlist_cmp cmp)
 {
 	t_tlist_node	*i;
 	t_tlist_node	*j;
+	t_tlist_node	*inxt;
+	t_tlist_node	*jnxt;
 
 	if (lst->elements == NULL || lst->elements->next == NULL)
 		return ;
 	i = lst->elements;
 	while (i)
 	{
+		inxt = i->next;
 		j = i->next;
 		while (j)
 		{
+			jnxt = j->next;
 			if (cmp(i, j) > 0)
 				ft_tlist_swap(lst, i, j);
-			j = j->next;
+			j = jnxt;
 		}
-		i = i->next;
+		i = inxt;
 	}
 }
 
