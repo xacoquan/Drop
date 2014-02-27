@@ -6,7 +6,7 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 16:28:46 by mbacoux           #+#    #+#             */
-/*   Updated: 2014/02/27 01:27:02 by mbacoux          ###   ########.fr       */
+/*   Updated: 2014/02/27 01:41:37 by mbacoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ int					ft_get_line(int, char **);
 typedef struct				s_tlist_node
 {
 	struct s_tlist_node		*next;
+	struct s_tlist_node		*prev;
 }							t_tlist_node;
 
 typedef void (*t_tlist_func)(t_tlist_node *);
@@ -139,6 +140,7 @@ int					ft_tlist_push_back(t_tlist *, t_tlist_node *);
 void				ft_tlist_each(t_tlist *, t_tlist_func);
 void				ft_tlist_each_if(t_tlist *, t_tlist_pred, t_tlist_func);
 t_tlist_node		*ft_tlist_search(t_tlist *, t_tlist_pred);
+void				ft_tlist_swap(t_tlist_node *, t_tlist_node *);
 void				ft_tlist_sort(t_tlist *, t_tlist_cmp);
 size_t				ft_tlist_size(t_tlist *);
 int					ft_tlist_is_empty(t_tlist *);
