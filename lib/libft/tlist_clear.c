@@ -6,7 +6,7 @@
 /*   By: ffourati <ffourati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/27 02:24:36 by ffourati          #+#    #+#             */
-/*   Updated: 2014/02/27 02:47:02 by ffourati         ###   ########.fr       */
+/*   Updated: 2014/02/27 03:13:02 by ffourati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void				ft_tlist_clear(t_tlist *lst, t_tlist_dtor dtor)
 		nxt = node->next;
 		ft_tlist_remove(lst, node, dtor);
 		node = nxt;
-	}	
+	}
 }
