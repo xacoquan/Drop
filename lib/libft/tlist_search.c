@@ -17,7 +17,7 @@ t_tlist_node		*ft_tlist_search(t_tlist *lst, t_tlist_pred predicate)
 	t_tlist_node	*elem;
 
 	elem = lst->elements;
-	while (predicate(elem))
+	while (elem && predicate(elem))
 		elem = elem->next;
 	return (elem);
 }
