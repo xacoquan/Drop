@@ -6,7 +6,7 @@
 /*   By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 16:28:46 by mbacoux           #+#    #+#             */
-/*   Updated: 2014/02/27 02:56:04 by mbacoux          ###   ########.fr       */
+/*   Updated: 2014/03/09 01:46:06 by ffourati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ typedef struct				s_tlist_node
 
 typedef void (*t_tlist_func)(t_tlist_node *);
 typedef void (*t_tlist_dtor)(t_tlist_node *);
+typedef t_tlist_node *(*t_tlist_ctor)(t_tlist_node *);
 typedef int (*t_tlist_pred)(t_tlist_node *);
 typedef int (*t_tlist_cmp)(t_tlist_node *, t_tlist_node *);
 
@@ -135,6 +136,7 @@ typedef struct				s_tlist
 }							t_tlist;
 
 t_tlist				*ft_tlist_new(t_tlist_dtor);
+t_tlist				*ft_tlist_dup(t_tlist *, t_tlist_ctor);
 int					ft_tlist_push_front(t_tlist *, t_tlist_node *);
 int					ft_tlist_push_back(t_tlist *, t_tlist_node *);
 void				ft_tlist_each(t_tlist *, t_tlist_func);
