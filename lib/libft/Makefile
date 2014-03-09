@@ -6,13 +6,13 @@
 #    By: mbacoux <mbacoux@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 16:28:30 by mbacoux           #+#    #+#              #
-#    Updated: 2014/03/09 02:22:10 by ffourati         ###   ########.fr        #
+#    Updated: 2014/03/09 02:39:18 by ffourati         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, mrproper, re, fast
 
-CC = clang
+CC := $(shell which clang)
 NAME = libft.a
 CFLAGS = -Wall -Werror -Wextra -pedantic -I./
 SOURCE = memset.c bzero.c memcpy.c memccpy.c memmove.c memchr.c memcmp.c \
@@ -32,13 +32,12 @@ SOURCE = memset.c bzero.c memcpy.c memccpy.c memmove.c memchr.c memcmp.c \
 
 OBJ = $(SOURCE:.c=.o)
 
-PLATFORM := $(shell uname)
 
-ifeq "$(PLATFORM)" "Darwin"
-	CFLAGS += -Xclang -fcolor-diagnostics
-else
+ifeq "$(CC)" ""
 	CC := gcc
 	CFLAGS += -Wno-unused-result
+else
+	CFLAGS += -Xclang -fcolor-diagnostics
 endif
 
 ifeq ($(FAST), 1)
